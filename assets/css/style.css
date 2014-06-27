@@ -1,0 +1,72 @@
+body{
+    font-family: proxima-nova,sans-serif !important;
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    width: 100%;
+    background: url("../images/noisy-texture-256x256-o5-d10-c-FFFFFF-t0.png") repeat scroll left top #000;
+
+
+}
+
+.color-red{
+    color:#DB0000;
+}
+
+#banner{
+    background-color: #000;
+    color:#FFF;
+    padding:10px;
+    font-size: 48px;
+    text-align: center;
+    font-weight: bold;
+}
+
+table{
+    background-color:#FFF !important;
+    border-radius: 3px !important;
+    -webkit-border-radius: 3px !important;
+    -moz-border-radius: 3px !important;
+}
+nav, #nav-bar  ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    background-color: #141414;
+    color:#B5B5B5;
+}
+#nav-bar li:after {
+    content:"| ";
+    padding-left:5px;
+    font-weight: none;
+}
+#nav-bar li{
+    text-align: center;
+    display:inline !important;
+}
+footer{
+    text-align: center;
+}
+
+#contact_info_white {
+    bottom: 20px;
+
+    height: 36px;
+    left: 0;
+    line-height: 36px;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    position: fixed;
+    text-align: center;
+    width: 100%;
+
+
+    color: #fff !important;
+
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+}
