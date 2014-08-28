@@ -13,7 +13,7 @@
                 url:'{{ URL::to('like') }}',
                 success:function(data)
                 {
-                    console.log(data);
+                    //console.log(data);
                     var like_ctr = data;
                     // increment like counter
                     $('#like-ctr').text(like_ctr);
@@ -54,6 +54,5 @@
     </div>
 
     <div class="clear:both"></div>
-
 </div>
 @stop

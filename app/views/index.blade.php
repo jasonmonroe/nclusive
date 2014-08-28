@@ -57,7 +57,6 @@
                             <td>{{ link_to($profile->homepage, $profile->homepage) }}</td>
                             <td><em>{{ str_limit($profile->summary, 50, '...') }}</em></td>
                             <td>{{ $profile->likes }}</td>
-
                         </tr>
                         @endforeach
                     @endforeach

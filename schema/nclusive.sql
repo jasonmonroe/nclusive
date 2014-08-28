@@ -6,6 +6,8 @@
 -- Generation Time: Aug 28, 2014 at 06:51 AM
 -- Server version: 5.6.17
 -- PHP Version: 5.4.24
+CREATE DATABASE nclusive;
+USE nclusive;
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
