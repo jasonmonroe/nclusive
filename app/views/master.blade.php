@@ -13,13 +13,13 @@
     <link rel="stylesheet" type="text/css" media="screen" href="{{ asset('assets/css/style.css') }}">
     <link rel="stylesheet" type="text/css" media="screen" href="{{ asset('assets/css/datepicker.css') }}">
     <link rel="stylesheet" type="text/css" media="screen" href="{{ asset('assets/js/jgrowl/jquery.jgrowl.min.css') }}">
-    <link rel="stylesheet" type="text/css" media="screen" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
 
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" type="text/css" media="screen" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 
     <!-- Optional theme -->
-    <link rel="stylesheet" type="text/css" media="screen" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
@@ -28,7 +28,7 @@
     <script type="text/javascript" src="{{ asset('assets/js/bootstrap-datepicker.js') }}"></script>
 
     <!-- Latest compiled and minified JavaScript -->
-    <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
     <title>Nclusive: {{ $title }}</title>
 </head>
@@ -46,14 +46,11 @@
     </nav>
     <div class="container">
 
-        <hr>
         @yield('content')
         <hr>
     </div>
 
-
     <footer>
-
         <span>Copyright 2014 &copy; | Nclusive | Property of Jason Monroe | All Rights Reserved</span>
     </footer>
 </body>

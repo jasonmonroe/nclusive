@@ -23,5 +23,6 @@ Route::get('search',          'nclusive@search');
 Route::get('auto',            'nclusive@auto');
 Route::any('search_results',  'nclusive@search_results');
 Route::post('fetch/{mode}',   'nclusive@fetch');
+Route::post('like',   'nclusive@like');
 
 Route::model('profile_model', 'profile_model');

@@ -1,6 +1,31 @@
 @extends('master')
-
 @section('content')
+
+<script type="text/javascript">
+
+    $(document).ready(function(){
+        $('#like-lnk').on('click', function(){
+
+            $.ajax({
+                data: { id: <?php echo $profile->id ?> },
+                type:'POST',
+                dataType:'JSON',
+                url:'{{ URL::to('like') }}',
+                success:function(data)
+                {
+                    console.log(data);
+                    var like_ctr = data;
+                    // increment like counter
+                    $('#like-ctr').text(like_ctr);
+                },
+                error:function(msg)
+                {
+                    console.log(msg.responseText);
+                }
+            });
+        });
+    });
+</script>
 
 <div id="content">
     <h3>Profile Information</h3>
@@ -9,7 +34,9 @@
         {{ $profile->src }}
         <p style="margin-top:10px">
             {{ link_to(URL::to('edit/'.$profile->id), 'Edit', array('class'=> 'btn btn-default btn-xs')) }}
-            {{ link_to(URL::to('destroy/'.$profile->id), 'Delete', array('class'=> 'btn btn-primary btn-xs')) }}
+            {{ link_to(URL::to('destroy/'.$profile->id), 'Delete', array('class'=> 'btn btn-danger btn-xs')) }}
+            <a id="like-lnk" class="btn btn-primary btn-xs" href="#"><i class="fa fa-thumbs-o-up color-green"></i> Like </a>
+            <span id="like-ctr">{{ $profile->likes }}</span>
         </p>
     </div>
 

@@ -170,7 +170,7 @@ class profile_model extends Eloquent implements UserInterface, RemindableInterfa
             ->join('region', 'profile.region_id', '=', 'region.id')
             ->join('city', 'profile.city_id', '=', 'city.id')
             ->join('occupation', 'profile.occupation_id', '=', 'occupation.id')
-            ->select('profile.id', 'profile.first_name', 'profile.last_name', 'profile.dob', 'profile.gender', 'country.name AS country', 'region.name AS region', 'city.name AS city', 'occupation.name AS occupation', 'homepage', 'summary', 'path')
+            ->select('profile.id', 'profile.first_name', 'profile.last_name', 'profile.dob', 'profile.gender', 'profile.likes', 'country.name AS country', 'region.name AS region', 'city.name AS city', 'occupation.name AS occupation', 'homepage', 'summary', 'path')
             ->paginate($limit);
 
         foreach($results->all() as $result)
@@ -182,7 +182,20 @@ class profile_model extends Eloquent implements UserInterface, RemindableInterfa
         return $results;
     }
 
+    public function set_like($id)
+    {
+        DB::statement('UPDATE profile SET likes = likes + 1 WHERE id = '.intval($id));
 
+        return $this->get_likes($id);
+    }
+
+    protected function get_likes($id)
+    {
+        $result = DB::table('profile')->where('id', '=', $id)->select('likes')->get();
+        //print_r(DB::getQueryLog());
+        //print_r($result);exit();
+        return $result[0]->likes;
+    }
 
     public function get_details($id)
     {
@@ -192,9 +205,9 @@ class profile_model extends Eloquent implements UserInterface, RemindableInterfa
             ->join('city', 'profile.city_id', '=', 'city.id')
             ->join('occupation', 'profile.occupation_id', '=', 'occupation.id')
             ->where('profile.id', '=', $id)
-            ->select('profile.id', 'profile.first_name', 'profile.last_name', 'profile.dob', 'profile.gender', 'country.id AS country_id', 'country.name AS country', 'region.id AS region_id', 'region.name AS region', 'city.id AS city_id', 'city.name AS city', 'occupation.id AS occupation_id', 'occupation.name AS occupation', 'homepage', 'summary', 'path', 'created_at', 'updated_at')
+            ->select('profile.id', 'profile.first_name', 'profile.last_name', 'profile.dob', 'profile.gender', 'profile.likes', 'country.id AS country_id', 'country.name AS country', 'region.id AS region_id', 'region.name AS region', 'city.id AS city_id', 'city.name AS city', 'occupation.id AS occupation_id', 'occupation.name AS occupation', 'homepage', 'summary', 'path', 'created_at', 'updated_at')
             ->get();
-//print_r(DB::getQueryLog());exit();
+
         foreach($results as $result)
         {
             $result->src        = '<img alt="profile-'.$result->id.'" src="'.$this->get_src($result->path).'">';

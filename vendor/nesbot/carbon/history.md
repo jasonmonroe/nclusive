@@ -1,3 +1,19 @@
+1.11.0 / 2014-08-25
+===================
+* Added isSameDay() (thanks @enkelmedia)
+* Added diffInWeeks(), maxValue() and minValue() (thanks @lucasmichot)
+* Improved accuracy of diffForHumans() by using 30/7 for weeks and moving the floor() call to outside the loop.  Fixed tests that just look better now as a result.
+* Improved readme with common formats example output (thanks @troyharvey)
+* Various internal refactors (thanks @lucasmichot)
+
+1.10.0 / 2014-07-17
+===================
+* Changed @return Carbon phpdocs to static for better IDE typehint when extending Carbon
+* Fixed Carbon.php download link
+* Added 5.6 and HHVM to test coverage
+* Fixed issue with isPast() returning true for now()
+* Added getter for weekOfMonth
+
 1.9.0 / 2014-05-12
 ==================
 * Changed self references to static to allow for easier child classes

@@ -93,7 +93,7 @@ class nclusive extends BaseController {
                 echo 'can not copy';
         }
 
-        chmod($photo_path, 0755);
+        chmod($photo_path, 0777);
 
         $this->profile_model->path = $photo_path;
         $this->profile_model->save();
@@ -206,12 +206,12 @@ class nclusive extends BaseController {
             {
                 $data['duration'] = 4000;
                 $data['jgrowl']   = 'Your image did not save!';
-                echo 'did not copy';exit();
+
                 return Redirect::back()->with($data);
             }
         }
 
-        chmod($photo_path, 0755);
+        chmod($photo_path, 0777);
 
         $profile->path = $photo_path;
         $profile->save();
@@ -354,5 +354,10 @@ class nclusive extends BaseController {
         }
 
         return Redirect::to('/')->with($data);
+    }
+
+    public function like()
+    {
+        return Response::json($this->profile_model->set_like(Input::get('id')));
     }
 }

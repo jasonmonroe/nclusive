@@ -25,7 +25,6 @@
 </script>
 
     <h2 style="text-align: center">Post Your Profile.  Get Liked.  Become Famous.  History.</h2>
-
     <div id="content">
         <span title="Show List" id="show-list"><i class="fa fa-bars"></i></span>
         <span title="Show Gallery" id="show-img"><i class="fa fa-picture-o"></i></span>
@@ -33,15 +32,16 @@
         <div id="table-container">
             <table class="table table-striped table-hovered table-bordered">
                 <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th><strong>Name</strong></th>
-                        <th><strong><abbr title="Date of Birth">DOB</abbr></strong></th>
-                        <th><strong>Gender</strong></th>
-                        <th><strong>Location</strong></th>
-                        <th><strong>Occupation</strong></th>
-                        <th><strong>Homepage</strong></th>
-                        <th><strong>Summary</strong></th>
+                    <tr style="background-color:black">
+                        <th style="color:white">ID</th>
+                        <th style="color:white"><strong>Name</strong></th>
+                        <th style="color:white"><strong><abbr title="Date of Birth">DOB</abbr></strong></th>
+                        <th style="color:white"><strong>Gender</strong></th>
+                        <th style="color:white"><strong>Location</strong></th>
+                        <th style="color:white"><strong>Occupation</strong></th>
+                        <th style="color:white"><strong>Homepage</strong></th>
+                        <th style="color:white"><strong>Summary</strong></th>
+                        <th style="color:white"><strong>Likes</strong></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -56,10 +56,11 @@
                             <td>{{ ucwords($profile->occupation) }}</td>
                             <td>{{ link_to($profile->homepage, $profile->homepage) }}</td>
                             <td><em>{{ str_limit($profile->summary, 50, '...') }}</em></td>
+                            <td>{{ $profile->likes }}</td>
+
                         </tr>
                         @endforeach
                     @endforeach
-
                 </tbody>
             </table>
         </div>
